@@ -212,7 +212,7 @@ section { position: relative; }
 .sched-detail { font-size: 12px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.9; letter-spacing: 0.05em; }
 .schedule-venue { margin-top: 48px; border: 1px solid rgba(201,168,76,0.15); background: rgba(255,255,255,0.02); overflow: hidden; }
 .schedule-venue-label { font-size: 10px; letter-spacing: 0.4em; color: var(--gold); padding: 20px 32px 12px; }
-.schedule-venue iframe { display: block; width: 100%; height: 220px; border: 0; filter: grayscale(100%) brightness(0.55) contrast(1.1); }
+.schedule-venue iframe { display: block; width: 100%; height: 220px; border: 0; filter: grayscale(80%) brightness(0.70) contrast(1.1) hue-rotate(185deg); }
 .schedule-venues { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
 
 /* GALLERY */
@@ -344,7 +344,6 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
     </p>
     <div class="hero-btns">
       <a href="https://forms.gle/3kvJsQjTyYhffemq7" class="btn-primary" target="_blank">例会の参加申込</a>
-      <a href="#about" class="btn-secondary">塾について知る</a>
     </div>
   </div>
 </section>
@@ -498,12 +497,12 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
     <div class="schedule-venues reveal reveal-delay-2">
       <div class="schedule-venue">
         <div class="schedule-venue-label">岐阜グランドホテル</div>
-        <iframe src="https://maps.google.com/maps?q=岐阜グランドホテル+岐阜市長良648&output=embed&hl=ja&z=15"
+        <iframe src="https://maps.google.com/maps?q=岐阜グランドホテル+岐阜市長良648&output=embed&hl=ja&z=11"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
       <div class="schedule-venue">
         <div class="schedule-venue-label">都ホテル岐阜</div>
-        <iframe src="https://maps.google.com/maps?q=都ホテル岐阜+岐阜市神田町8&output=embed&hl=ja&z=15"
+        <iframe src="https://maps.google.com/maps?q=都ホテル岐阜+岐阜市神田町8&output=embed&hl=ja&z=11"
           allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
@@ -557,21 +556,20 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
         </table>
         <h3 style="font-family:'Noto Serif JP',serif; font-size:18px; font-weight:700; letter-spacing:0.1em; margin:40px 0 24px; color:var(--gold2);">入塾方法</h3>
         <table class="info-table">
-          <tr><td>手続き</td><td>「岐阜実践経営塾入塾申込書」に必要事項を記入のうえ、事務局へご送付ください</td></tr>
-          <tr><td>面接</td><td>ご紹介以外の方は代表者との面接があります</td></tr>
+          <tr><td>手続き</td><td>事務局へお問い合わせください</td></tr>
+          <tr><td>面接</td><td>ご紹介以外の方は代表者との面接がある場合があります</td></tr>
         </table>
       </div>
       <div class="admission-cta reveal reveal-delay-2">
         <h3>年会費のご案内</h3>
-        <p>会費は例会の会場費、懇親会費、事務局必要経費、通信費等に使われます。</p>
+        <p>年会費をお支払いの方は勉強会・懇親会に無料で参加できます。加えて、社員の方の参加費割引特典もございます。</p>
         <div class="price-block">
           <span class="amount">80,000</span>
           <span class="unit">円 / 年</span>
         </div>
         <p class="price-note">※ 年度途中での入塾は月割となります</p>
-        <p>入塾に関するご質問、詳細のご案内は事務局へお気軽にお問い合わせください。</p>
         <div style="margin-top:32px;">
-          <a href="https://forms.gle/3kvJsQjTyYhffemq7" class="btn-primary" target="_blank" style="font-size:12px; padding:16px 32px;">例会の参加申込 →</a>
+		<a href="#" data-m="gifujuku" data-d="gmail.com" class="btn-primary js-mail" style="font-size:12px; padding:16px 32px;">メールで問い合わせる →</a>
         </div>
       </div>
     </div>
@@ -598,10 +596,7 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
             <td>住所</td>
             <td>〒500-8731<br>岐阜県岐阜市都通4丁目11-1<br>アシストHDビル</td>
           </tr>
-          <tr>
-            <td>備考</td>
-            <td>岐阜実践経営塾の活動については「入塾のご案内」に詳細を記載しております</td>
-          </tr>
+
         </table>
         <div style="margin-top:36px;">
           <a href="#" data-m="gifujuku" data-d="gmail.com" class="btn-primary js-mail" style="font-size:12px; padding:16px 32px;">メールで問い合わせる →</a>
