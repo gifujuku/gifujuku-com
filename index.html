@@ -124,7 +124,7 @@ body::before {
   background-size: 80px 80px; animation: gridMove 20s linear infinite;
 }
 @keyframes gridMove { 0% { transform: translateY(0); } 100% { transform: translateY(80px); } }
-.hero-content { position: relative; z-index: 2; }
+.hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
 .orb { position: absolute; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 1; }
 .orb-1 { width: 600px; height: 600px; top: -200px; left: -100px; background: radial-gradient(circle, rgba(201,168,76,0.10), transparent 70%); animation: orbFloat 8s ease-in-out infinite; }
 .orb-2 { width: 500px; height: 500px; bottom: -100px; right: -50px; background: radial-gradient(circle, rgba(1,27,78,0.6), transparent 70%); animation: orbFloat 10s ease-in-out infinite reverse; }
@@ -142,6 +142,56 @@ body::before {
 .hero-title { font-family: 'Noto Serif JP', serif; font-size: clamp(20px, 4vw, 48px); font-weight: 900; line-height: 1.7; letter-spacing: 0.1em; color: var(--white); margin-bottom: 24px; animation: fadeUp 1s ease 0.4s both; }
 .hero-sub { font-family: 'Noto Serif JP', serif; font-size: clamp(16px, 2.2vw, 24px); font-weight: 400; letter-spacing: 0.06em; color: rgba(255,255,255,0.8); margin-bottom: 36px; animation: fadeUp 1s ease 0.5s both; }
 .hero-sub em { color: var(--gold2); font-style: normal; font-weight: 600; }
+.hero-notice-link {
+  order: -1;
+  display: inline-flex; align-items: center; justify-content: flex-start; gap: 14px;
+  width: min(100%, 560px);
+  margin: 0 auto 34px; padding: 16px 22px;
+  border: 1px solid rgba(245,228,168,0.68);
+  background: linear-gradient(135deg, rgba(245,228,168,0.18) 0%, rgba(232,232,232,0.14) 38%, rgba(201,168,76,0.24) 100%);
+  color: var(--white); text-decoration: none; text-align: left;
+  animation: fadeUp 1s ease 0.55s both;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  position: relative; overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.16);
+  backdrop-filter: blur(10px);
+}
+.hero-notice-link::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.12) 42%, transparent 68%);
+  pointer-events: none;
+}
+.hero-notice-link:hover,
+.hero-notice-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(245,228,168,0.95);
+  background: linear-gradient(135deg, rgba(245,228,168,0.24) 0%, rgba(232,232,232,0.18) 38%, rgba(201,168,76,0.3) 100%);
+  box-shadow: 0 22px 52px rgba(0,0,0,0.32), inset 0 1px 0 rgba(255,255,255,0.22);
+}
+.hero-notice-icon {
+  width: 48px; height: 48px; flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), rgba(201,168,76,0.16) 70%);
+  box-shadow: 0 0 0 9px rgba(201,168,76,0.08);
+  border: 1px solid rgba(232,232,232,0.26);
+}
+.hero-notice-icon svg { width: 19px; height: 19px; fill: none; stroke: var(--gold3); stroke-width: 1.8; }
+.hero-notice-text,
+.hero-notice-icon { position: relative; z-index: 1; }
+.hero-notice-text strong {
+  display: block;
+  font-size: 14px; font-weight: 700; letter-spacing: 0.1em;
+  margin-bottom: 4px;
+  background: linear-gradient(90deg, #fff7d6 0%, #f5e4a8 52%, #ededed 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-notice-text span {
+  display: block;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.08em;
+  color: rgba(238,240,247,0.9);
+}
 .hero-desc { font-size: 14px; font-weight: 300; line-height: 2.1; color: rgba(255,255,255,0.65); max-width: 540px; margin: 0 auto 48px; letter-spacing: 0.08em; animation: fadeUp 1s ease 0.6s both; }
 .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeUp 1s ease 0.7s both; }
 
@@ -224,6 +274,11 @@ section { position: relative; }
 .schedule-venue-label { font-size: 10px; letter-spacing: 0.4em; color: var(--gold); padding: 20px 32px 12px; }
 .schedule-venue iframe { display: block; width: 100%; height: 220px; border: 0; filter: grayscale(80%) brightness(0.70) contrast(1.1) hue-rotate(185deg); }
 .schedule-venues { margin-top: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.schedule-alert { margin-top: 32px; max-width: 720px; padding: 24px 28px; border: 1px solid rgba(201,168,76,0.35); background: linear-gradient(135deg, rgba(201,168,76,0.14), rgba(255,255,255,0.03)); scroll-margin-top: 96px; }
+.schedule-alert-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 12px; }
+.schedule-alert-label { display: inline-block; margin-bottom: 0; padding: 3px 10px; border: 1px solid rgba(201,168,76,0.45); color: var(--gold2); font-size: 10px; font-weight: 500; letter-spacing: 0.18em; }
+.schedule-alert-meta { font-size: 11px; font-weight: 400; letter-spacing: 0.08em; color: rgba(232,232,232,0.84); }
+.schedule-alert p { font-size: 14px; font-weight: 300; line-height: 2; color: rgba(255,255,255,0.82); letter-spacing: 0.05em; }
 
 /* GALLERY */
 #gallery { background: linear-gradient(to bottom, var(--navy3), var(--navy2)); }
@@ -286,6 +341,7 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
   nav { padding: 0 24px; }
   .nav-cta { display: none; }
   .section-inner { padding: 80px 24px; }
+  .hero-notice-link { width: 100%; max-width: 520px; }
   .schedule-venues { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .history-layout { grid-template-columns: 1fr; gap: 40px; }
@@ -347,6 +403,18 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
       経営者の心を高め<br>経営を伸ばす<br>その志を、次世代に
     </h1>
     <p class="hero-sub">稲盛経営哲学を<em>学び実践する場</em></p>
+    <a href="#schedule-notice" class="hero-notice-link" aria-label="お知らせへ移動">
+      <span class="hero-notice-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 4.5a5 5 0 0 0-5 5v2.2c0 .8-.26 1.58-.74 2.21L4.9 15.7h14.2l-1.36-1.79A3.68 3.68 0 0 1 17 11.7V9.5a5 5 0 0 0-5-5Z"></path>
+          <path d="M10 18a2.2 2.2 0 0 0 4 0"></path>
+        </svg>
+      </span>
+      <span class="hero-notice-text">
+        <strong>お知らせがあります</strong>
+        <span>台風に関する開催情報はこちら</span>
+      </span>
+    </a>
     <p class="hero-desc">
       経営哲学と管理会計。<br>
       この二つを学び、実践することで、<br>
@@ -466,6 +534,14 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
       <div class="section-label">Schedule</div>
       <h2 class="section-title">例会の<span class="accent">ご案内</span></h2>
       <p class="section-lead">年間を通じて例会を開催。経営体験発表、講演、懇親会を通じて経営者同士が<span style="white-space:nowrap">学び合います。</span></p>
+    </div>
+
+    <div class="schedule-alert reveal reveal-delay-1" id="schedule-notice">
+      <div class="schedule-alert-head">
+        <div class="schedule-alert-label">お知らせ</div>
+        <div class="schedule-alert-meta">6/25 12時更新</div>
+      </div>
+      <p>台風が来ておりますが、開催予定です。<br>万が一当日中止の場合は、6/27(土)11時30分を目途にこちらでお知らせいたします。</p>
     </div>
 
     <div style="margin-top:64px;">
