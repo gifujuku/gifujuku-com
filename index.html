@@ -10,6 +10,16 @@
 
   gtag('config', 'G-N2QVYC6ZK3');
 </script>
+<script>
+window.SITE_CONFIG = {
+  // 台風コメントアウト用
+  showScheduleNotice: false,
+  // ★次回申し込みURL★：
+  nextApplicationUrl: 'https://forms.gle/cmTSzkarvjmKNEhA8',
+  // ★次回開催月★：
+  nextMeetingMonth: 9
+};
+</script>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -373,7 +383,7 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
     <li><a href="#admission">入塾に関して</a></li>
     <li><a href="#contact">お問い合わせ</a></li>
   </ul>
-  <a href="https://forms.gle/QFZGua4BUwBpdUwY8" class="nav-cta" target="_blank">例会の参加申込 →</a>
+  <a href="#" class="nav-cta js-next-entry-link" target="_blank" rel="noopener noreferrer">例会の参加申込 →</a>
   <button class="hamburger" id="hamburgerBtn" aria-label="メニューを開く" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
@@ -387,7 +397,7 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
     <li><a href="#admission" class="sp-menu-link">入塾に関して</a></li>
     <li><a href="#contact" class="sp-menu-link">お問い合わせ</a></li>
   </ul>
-  <div class="sp-drawer-cta"><a href="https://forms.gle/QFZGua4BUwBpdUwY8" target="_blank">例会の参加申込 →</a></div>
+  <div class="sp-drawer-cta"><a href="#" class="js-next-entry-link" target="_blank" rel="noopener noreferrer">例会の参加申込 →</a></div>
 </div>
 
 <!-- HERO -->
@@ -403,7 +413,8 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
       経営者の心を高め<br>経営を伸ばす<br>その志を、次世代に
     </h1>
     <p class="hero-sub">稲盛経営哲学を<em>学び実践する場</em></p>
-    <a href="#schedule-notice" class="hero-notice-link" aria-label="お知らせへ移動">
+    <!--
+    <a href="#schedule-notice" class="hero-notice-link js-schedule-notice" aria-label="お知らせへ移動" hidden>
       <span class="hero-notice-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24">
           <path d="M12 4.5a5 5 0 0 0-5 5v2.2c0 .8-.26 1.58-.74 2.21L4.9 15.7h14.2l-1.36-1.79A3.68 3.68 0 0 1 17 11.7V9.5a5 5 0 0 0-5-5Z"></path>
@@ -415,13 +426,14 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
         <span>台風に関する開催情報はこちら</span>
       </span>
     </a>
+    -->
     <p class="hero-desc">
       経営哲学と管理会計。<br>
       この二つを学び、実践することで、<br>
       永続的に発展する企業を<br>共に創りましょう。
     </p>
     <div class="hero-btns">
-      <a href="https://forms.gle/QFZGua4BUwBpdUwY8" class="btn-primary" target="_blank">例会の参加申込</a>
+      <a href="#" class="btn-primary js-next-entry-link" target="_blank" rel="noopener noreferrer">例会の参加申込</a>
     </div>
   </div>
 </section>
@@ -536,7 +548,7 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
       <p class="section-lead">年間を通じて例会を開催。経営体験発表、講演、懇親会を通じて経営者同士が<span style="white-space:nowrap">学び合います。</span></p>
     </div>
 
-    <div class="schedule-alert reveal reveal-delay-1" id="schedule-notice">
+    <div class="schedule-alert reveal reveal-delay-1 js-schedule-notice" id="schedule-notice" hidden>
       <div class="schedule-alert-head">
         <div class="schedule-alert-label">お知らせ</div>
         <div class="schedule-alert-meta">6/25 12時更新</div>
@@ -547,35 +559,39 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
     <div style="margin-top:64px;">
       <div class="schedule-year-title reveal">2026 <span>年間例会予定</span></div>
       <div class="sched-grid">
-        <div class="sched-item done reveal reveal-delay-1">
+        <div class="sched-item js-schedule-item done reveal reveal-delay-1" data-month="2">
           <div class="sched-date">02.07<span class="sched-sat">土 14:00-18:00</span></div>
-          <div class="sched-badge">実施済み</div>
+          <div class="sched-badge js-schedule-badge">実施済み</div>
           <div class="sched-theme">総会例会</div>
           <div class="sched-detail">会場：岐阜グランドホテル<br>講演：秋元　祥治　様</div>
         </div>
-        <div class="sched-item done reveal reveal-delay-2">
+        <div class="sched-item js-schedule-item done reveal reveal-delay-2" data-month="4">
           <div class="sched-date">04.25 <span class="sched-sat">土 14:00-18:00</span></div>
-          <div class="sched-badge">実施済み</div>
+          <div class="sched-badge js-schedule-badge">実施済み</div>
           <div class="sched-theme">例会</div>
           <div class="sched-detail">会場：岐阜グランドホテル<br>講演：吉川　直樹　様</div>
         </div>
-        <div class="sched-item upcoming reveal-delay-3">
+        <div class="sched-item js-schedule-item done reveal reveal-delay-3" data-month="6">
           <div class="sched-date">06.27 <span class="sched-sat">土 14:00-18:00</span></div>
-          <div class="sched-badge">受付中</div>
+          <div class="sched-badge js-schedule-badge">実施済み</div>
           <div class="sched-theme">例会</div>
           <div class="sched-detail">会場：都ホテル岐阜<br>講演：岩尾　俊兵　様</div>
         </div>
-        <div class="sched-item reveal reveal-delay-4">
+        <div class="sched-item js-schedule-item upcoming reveal reveal-delay-4" data-month="9">
           <div class="sched-date">09.19 <span class="sched-sat">土 14:00-18:00</span></div>
-          <div class="sched-badge">受付前</div>
+          <div class="sched-badge js-schedule-badge">受付中</div>
           <div class="sched-theme">例会</div>
           <div class="sched-detail">会場：都ホテル岐阜<br>講演：兵頭　賢　様</div>
         </div>
-        <div class="sched-item reveal reveal-delay-5">
+        <div class="sched-item js-schedule-item reveal reveal-delay-5" data-month="11">
           <div class="sched-date">11.28 <span class="sched-sat">土</span></div>
-          <div class="sched-badge">受付前</div>
+          <div class="sched-badge js-schedule-badge">受付前</div>
           <div class="sched-theme">例会</div>
           <div class="sched-detail">会場：岐阜グランドホテル<br>講演：未定</div>
+        </div>
+        <div class="sched-item reveal reveal-delay-6">
+          <div class="sched-date">2027 <span class="sched-sat">年間予定</span></div>
+          <div class="sched-detail">02.06 土曜日<br>04.24 土曜日<br>06.26 土曜日<br>09.18 土曜日<br>11.27 土曜日</div>
         </div>
       </div>
     </div>
@@ -713,6 +729,39 @@ footer { background: var(--navy3); border-top: 1px solid rgba(255,255,255,0.06);
 </footer>
 
 <script>
+const siteConfig = window.SITE_CONFIG || {};
+
+// TOP CONFIG
+document.querySelectorAll('.js-next-entry-link').forEach(link => {
+  if (siteConfig.nextApplicationUrl) {
+    link.href = siteConfig.nextApplicationUrl;
+  }
+});
+
+document.querySelectorAll('.js-schedule-notice').forEach(el => {
+  el.hidden = !siteConfig.showScheduleNotice;
+});
+
+const nextMeetingMonth = Number(siteConfig.nextMeetingMonth);
+if (Number.isFinite(nextMeetingMonth)) {
+  document.querySelectorAll('.js-schedule-item[data-month]').forEach(item => {
+    const month = Number(item.dataset.month);
+    const badge = item.querySelector('.js-schedule-badge');
+
+    item.classList.remove('done', 'upcoming');
+
+    if (month < nextMeetingMonth) {
+      item.classList.add('done');
+      if (badge) badge.textContent = '実施済み';
+    } else if (month === nextMeetingMonth) {
+      item.classList.add('upcoming');
+      if (badge) badge.textContent = '受付中';
+    } else {
+      if (badge) badge.textContent = '受付前';
+    }
+  });
+}
+
 // NAV SCROLL
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
